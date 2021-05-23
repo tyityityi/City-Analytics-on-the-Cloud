@@ -5,7 +5,6 @@ import os
 # os.system("python map1.py")
 
 from couchdb.design import ViewDefinition
-import flaskext.couchdb
 import couchdb
 import subprocess
 import json

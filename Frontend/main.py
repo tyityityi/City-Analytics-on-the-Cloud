@@ -1,3 +1,4 @@
+#coding=gbk
 import os
 
 from flask import Flask
@@ -267,7 +268,7 @@ cr_negative_lan_value=getData.finalcrnv
 def show_pie():
     # fn = """
     #     function(params) {
-    #         if(params.name == '其他')
+    #         if(params.name == '')
     #             return '\\n\\n\\n' + params.name + ' : ' + params.value + '%';
     #         return params.name + ' : ' + params.value + '%';
     #     }
@@ -644,7 +645,7 @@ def finalf():
 
 #######################################################################################
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=80)
 
     # app.config.update(
     #     DEBUG=True,
