@@ -645,7 +645,7 @@ def finalf():
 
 #######################################################################################
 if __name__ == "__main__":
-    app.run(port=80)
+    app.run(debug=True)
 
     # app.config.update(
     #     DEBUG=True,
