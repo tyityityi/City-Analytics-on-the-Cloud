@@ -8,7 +8,6 @@ from couchdb.design import ViewDefinition
 import couchdb
 import subprocess
 import json
-import numpy as np
 
 from jinja2 import Markup
 from pyecharts import options as opts
