@@ -645,7 +645,7 @@ def finalf():
 
 #######################################################################################
 if __name__ == "__main__":
-    app.run(debug=True)
+    #app.run(debug=True)
 
     # app.config.update(
     #     DEBUG=True,
@@ -656,7 +656,7 @@ if __name__ == "__main__":
     # manager.setup(app)
     # manager.add_viewdef(docs_by_author)  # Install the view
     # manager.sync(app)
-    # #app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)
 
 # @app.route('/crimemap')
 # def show_crimemap():
