@@ -12,6 +12,17 @@ except:
     database1 = couch['unique_twitter']
 
 try:
+    database3 = couch['last_unique_amount_record']
+except:
+    couch.create('last_unique_amount_record')
+    database3 = couch['last_unique_amount_record']
+
+present_unique_amount = database1.__len__()
+for id in database3:
+    database3.delete(database3[id])
+database3.save({"amount": present_unique_amount})
+
+try:
     database2 = couch['last_refresh_amount_record']
 except:
     couch.create('last_refresh_amount_record')
@@ -30,7 +41,7 @@ for id in database2:
     database2.delete(database2[id])
 database2.save({"amount": present_amount})
 
-lines = database.view('_all_docs', include_docs=True, descending=True, limit=present_amount-previous_amount)
+lines = database.view('_all_docs', include_docs=True, descending=True, limit=present_amount - previous_amount)
 data = [line['doc'] for line in lines]
 
 dataframe = pd.DataFrame(data)
@@ -39,5 +50,5 @@ dict = dataframe.to_dict('records')
 
 for l in dict:
     database1.save({"id": l['id'], "text": l['text'], 'coordinates': l['coordinates'], "location": l['location'],
-                   "language": l['language'], "friends_count": l['friends_count']})
+                    "language": l['language'], "friends_count": l['friends_count']})
 
