@@ -1,10 +1,9 @@
 import pandas as pd
 import couchdb
 
-# couch = couchdb.Server('http://admin:password@172.26.132.232:5984/')
 couch = couchdb.Server('http://admin:password@172.26.130.232:5984/')
-database = couch['covid19_test']
-database1 = couch['crime_test']
+database = couch['covid19_related']
+database1 = couch['crime_related']
 # database2 = couch['unhappy_twitter']
 
 # covid analysis
@@ -16,7 +15,7 @@ df1['count'] = df.groupby(['isPos','language','location']).count()['_id']
 df1['percent'] = df1['polarity']/df1['count']
 
 dict = df1.to_dict('index')
-print(dict)
+# print(dict)
 d = {1: [], -1: []}
 for k in dict.keys():
     dict[k].update({"lang": k[1], "loc": k[2]})
