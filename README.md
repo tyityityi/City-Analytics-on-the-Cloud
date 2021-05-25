@@ -44,6 +44,8 @@ Sub Node 2: [172.26.131.18/5984/_utils](172.26.131.18/5984/_utils)
       - data analyser 
   /Frontend
       - frontend application
+  /data_handle.sh
+      - shell for running data harvester and analyser
   /.gitignore
       - avoid uploading meaningless files
 ```
@@ -64,11 +66,11 @@ You just need to run the `data_handle.sh` shell in arbitrary instance belongs to
 
 The next step is to run the command below to harvest and analyze *100* tweets: 
 ```
-run data_handle.sh
+sh data_handle.sh
 ```
  If you want to set the amount of data you want to harvest, you may input: 
 ```
-run data_handle.sh <number of tweets>
+sh data_handle.sh <number of tweets>
 ```
 where an interger would be fine.
 
