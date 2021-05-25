@@ -70,4 +70,4 @@ run data_handle.sh <number of tweets>
 ```
 where an interger would be fine.
 
-You might compare the changes on our CouchDB administration page [172.26.130.232/5984/_utils](172.26.130.232/5984/_utils) befor and after running the shell above.
+You might compare the changes of the database on our [CouchDB administration page](172.26.130.232/5984/_utils) before and after running the shell above.
