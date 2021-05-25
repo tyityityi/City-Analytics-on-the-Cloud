@@ -4,7 +4,7 @@
 # Tianyi Zheng 	1024493
 # Yining Ding 	874213
 # Zixin Zhang 	1087336
-# Description   This document is utilized to analysis the Covid19 and Crime tweets and save the result to four database in CouchDB
+# Description   This document is utilized to analysis the Covid19 and Crime tweets and save the result to four database on CouchDB
 
 import pandas as pd
 import couchdb
