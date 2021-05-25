@@ -60,7 +60,9 @@ sh run.sh
  Then you can have a cup of tea🍵 and wait :-)
 
 ## **How to Harvest and Analyze Data in arbitrary instance?**
-You just need to run the `data_handle.sh` shell in arbitrary instance belongs to us. Firstly, you are required to access one of our instances using SSH or tools like PUTTY. The next step is to run the command below to harvest and analyze 100 tweets: 
+You just need to run the `data_handle.sh` shell in arbitrary instance belongs to us. Firstly, you are required to access one of our instances using SSH or tools like PUTTY. 
+
+The next step is to run the command below to harvest and analyze *100* tweets: 
 ```
 run data_handle.sh
 ```
