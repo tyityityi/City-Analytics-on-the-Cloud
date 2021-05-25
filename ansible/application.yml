@@ -1,5 +1,0 @@
-- hosts: webserver
-  remote_user: ubuntu
-  gather_facts: true
-  roles:
-    - role: application-webnode

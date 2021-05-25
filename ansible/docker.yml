@@ -1,6 +1,0 @@
-- hosts: all_servers
-  remote_user: ubuntu
-  gather_facts: true
-  roles:
-    - role: docker-proxy
-    - role: docker-configuration
