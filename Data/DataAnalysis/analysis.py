@@ -1,10 +1,17 @@
+# COMP90024     Group 66
+# Ziyang Zhang 	1139552
+# Yanjun Ma     1184516
+# Tianyi Zheng 	1024493
+# Yining Ding 	874213
+# Zixin Zhang 	1087336
+# Description   This document is utilized to analysis the Covid19 and Crime tweets and save the result to four database in CouchDB
+
 import pandas as pd
 import couchdb
 
 couch = couchdb.Server('http://admin:password@172.26.130.232:5984/')
 database = couch['covid19_related']
 database1 = couch['crime_related']
-# database2 = couch['unhappy_twitter']
 
 # covid analysis
 lines = database.view('_all_docs', include_docs=True)
@@ -30,13 +37,6 @@ except:
     couch.create('covid_anay')
 database2 = couch['covid_anay']
 database2.save(d)
-
-# 前端代码
-# for k in dict.keys():
-#     if k[0] == 1:
-#         dict[k].update({"lang":k[1], "loc":k[2]})
-#         print(dict[k])
-
 
 
 # crime analysis
@@ -98,46 +98,3 @@ except:
     couch.create('crime_friends_vs_polarity')
 database5 = couch['crime_friends_vs_polarity']
 database5.save(dictCr)
-
-
-# df = dataframe[['location', 'polarity']]
-# df1 = df.groupby(df['location']).aggregate({'polarity': 'sum'})
-# df1['count'] = df.groupby(df['location']).count()
-# print(df1)
-#
-# Total = df1['polarity'].sum()
-# print(Total)
-
-
-# lines = database1.view('_all_docs', include_docs=True)
-# cri_data = [line['doc'] for line in lines]
-# dataframe2 = pd.DataFrame(cri_data)
-# df2 = dataframe2[['location', 'polarity']]
-# df3 = df2.groupby(df2['location']).aggregate({'polarity': 'sum'})
-# df3['count'] = df2.groupby(df2['location']).count()
-# print(df3)
-#
-# Total = df3['polarity'].sum()
-# print(Total)
-
-
-# lines = database2.view('_all_docs', include_docs=True)
-# neg_data = [line['doc'] for line in lines]
-# dataframe3 = pd.DataFrame(neg_data)
-# df4 = dataframe3[['location', 'polarity']]
-# df5 = df4.groupby(df4['location']).aggregate({'polarity': 'sum'})
-# df5['count'] = df4.groupby(df4['location']).count()
-# print(df5)
-#
-# Total = df5['polarity'].sum()
-# print(Total)
-
-
-# dict = df5.to_dict('index')
-# print(dict)
-#
-# database3 = couch['test']
-# database3.save(dict)
-# for l in dict:
-#     print(l)
-#     # database3.save({"polarity": l['id'], "count": l['count']})
