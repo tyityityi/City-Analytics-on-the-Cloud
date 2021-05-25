@@ -1,4 +1,4 @@
-# **City Analystics on the Cloud**
+# **City Analytics on the Cloud**
 ## **Cluster and Cloud Computing 2021 Assignment 2 - Team 66**
 This repository contains the source code for assignment 2 of the COMP90024 Cluster and Cloud Computing course at the University of Melbourne.
 
