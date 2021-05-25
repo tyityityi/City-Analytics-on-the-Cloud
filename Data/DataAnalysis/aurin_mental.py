@@ -1,18 +1,10 @@
-# import couchdb
-# import json
-# couch = couchdb.Server('http://admin:password@172.26.132.125:5555/')
-#
-# try:
-#     database = couch['aurin']
-# except:
-#     couch.create('aurin')
-#     db = couch['aurin']
-#
-# with open(<your file name>) as jsonfile:
-#     for row in jsonfile:
-#         json_entry = json.load(row)
-#         db.save(json_entry)
-
+# COMP90024     Group 66
+# Ziyang Zhang 	1139552
+# Yanjun Ma     1184516
+# Tianyi Zheng 	1024493
+# Yining Ding 	874213
+# Zixin Zhang 	1087336
+# Description   This document is used to save the mental health data from aurin to the database in CouchDB
 
 import ujson
 import re
@@ -48,16 +40,4 @@ combined('Adelaide')
 combined('Gold Coast')
 combined('Newcastle')
 print(result)
-
-# {'Sydney': 4020, 'Melbourne': 1509, 'Brisbane': 3654, 'Perth': 2398, 'Adelaide': 3145, 'Gold Coast': 1157, 'Newcastle': 2307}
-
-# try:
-#     database = couch['aurin_mental']
-# except:
-#     couch.create('aurin_mental')
-#     db = couch['aurin_mental']
-#
-# for k, v in result.items():
-#     db.save({"location": k, "mental_health": v})
-
 
