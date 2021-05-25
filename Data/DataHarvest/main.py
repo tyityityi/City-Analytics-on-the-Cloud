@@ -1,3 +1,11 @@
+# COMP90024     Group 66
+# Ziyang Zhang 	1139552
+# Yanjun Ma     1184516
+# Tianyi Zheng 	1024493
+# Yining Ding 	874213
+# Zixin Zhang 	1087336
+# Description   This document demonstrates how to harvest tweets by using twitter API
+
 import couchdb
 import tweepy
 from tweepy import StreamListener, Stream
