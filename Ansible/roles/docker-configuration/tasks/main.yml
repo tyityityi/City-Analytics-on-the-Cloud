@@ -1,0 +1,38 @@
+# sudo apt install python-pip
+- name: install pip
+  become: yes
+  apt: 
+    name: ['python-pip']
+    state: latest
+    update_cache: yes
+  when: ansible_distribution == "Ubuntu"
+
+# pip install --upgrade pip
+- name: update pip
+  become: yes
+  pip:
+    name: ['pip']
+    state: latest
+
+- name: install docker-compose
+  become: yes
+  pip:
+    name: ['docker-compose']
+    version: 1.22.0
+    state: present
+
+- name: add docker user (run command as sudo)
+  user:
+    name: "ubuntu"
+    append: yes
+    groups: docker
+  become: true
+  with_items: "['ubuntu']"
+
+- name: pull couchdb
+  become: yes
+  command: docker pull couchdb:2.3.0
+
+#- name: pull the image of apache
+#  become: yes
+#  command: docker pull httpd
