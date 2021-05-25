@@ -22,11 +22,10 @@ The data used to analysis is retrieved from [Aurin](https://aurin.org.au/) and [
 
 ## **YouTube Link**
 
-System architecture and delpoyment: [https://youtu.be/7oCPjouVqUs](https://youtu.be/7oCPjouVqUs)
+System architecture and delpoyment: [https://youtu.be/CLgQxwq6uDI](https://youtu.be/CLgQxwq6uDI)
 
-Data harvester and analyser:
+Scenarios and Demo:[https://youtu.be/hJKhXxit9uc](https://youtu.be/hJKhXxit9uc)
 
-Visualization of Results:
 
 ## **CouchDB Cluster Adminstration Page**
 Master Node: [172.26.130.232/5984/_utils](172.26.130.232/5984/_utils)
@@ -65,9 +64,10 @@ You just need to run the `data_handle.sh` shell in arbitrary instance belongs to
 ```
 run data_handle.sh
 ```
- If you want to change the amount of data you want to harvest, you can input: 
+ If you want to set the amount of data you want to harvest, you may input: 
 ```
-run data_handle.sh <amount of data>
+run data_handle.sh <number of tweets>
 ```
+where an interger would be fine.
 
-Then you can find the result of analysis in our CouchDB database which is shown above.
+You might compare the changes on our CouchDB administration page [172.26.130.232/5984/_utils](172.26.130.232/5984/_utils) befor and after running the shell above.
