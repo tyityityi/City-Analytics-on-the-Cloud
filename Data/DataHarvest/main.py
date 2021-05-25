@@ -11,10 +11,10 @@ import tweepy
 from tweepy import StreamListener, Stream
 from urllib3.exceptions import ProtocolError
 
-consumer_key = 'YcvSYZK29HNjlZogfbxkQUa69'
-consumer_secret = 'XOAVX0LrptA93lCfPgRD09bIhUs5V4FlIAwyRExnSmRzAdi58t'
-access_token = '1385773547256115201-aLwvlrKCpkLChvvt20op2zcT69VX92'
-access_token_secret = 'lVmJTwV1Mpqw15DH1e2KqYuPxIoA3mRnhmQikWhaLtn12'
+consumer_key = 'vkZtp8hpIapvdzJA7RJYgpSpR'
+consumer_secret = 'VLJbzDxyXQQV2I85o72abZtiewSRHduzMS0PfoTOcTE4IR27D4'
+access_token = '1385937899875553283-wcAfjYDfMmdlh1YcLVguTOvaqLWrOY'
+access_token_secret = 'nJ7mKoXMNDSQBU2sWP62Owk3qvy9QyERsGYZq5r1uFVTT'
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -27,7 +27,7 @@ except:
 
 try:
     database = couch['twitter']
-    print("link to twitter database")
+    print("link to ‘twitter’ database")
 except:
     couch.create('twitter')
     database = couch['twitter']
@@ -35,6 +35,7 @@ except:
 
 
 class twitterStream(StreamListener):
+    number = int(sys.argv[1]) if len(sys.argv) > 1 else 100
 
     def on_error(self, status):
         print(status)
@@ -51,6 +52,9 @@ class twitterStream(StreamListener):
         friends_count = status.user.friends_count
         database.save({"id": id_str, "text": text, 'coordinates': coordinates, "location": location,
                        "language": language, "friends_count": friends_count})
+        twitterStream.number -= 1
+        if twitterStream.number == 0:
+            exit(0)
 
 
 l = twitterStream()
