@@ -53,7 +53,10 @@ lines = database.view('_all_docs', include_docs=True, descending=True, limit=pre
 data = [line['doc'] for line in lines]
 
 dataframe = pd.DataFrame(data)
+print(dataframe)
 dataframe.drop_duplicates(subset='id', inplace=True)
+print("-----")
+print(dataframe)
 dict = dataframe.to_dict('records')
 
 for l in dict:
