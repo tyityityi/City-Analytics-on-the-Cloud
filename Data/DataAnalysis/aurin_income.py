@@ -1,3 +1,11 @@
+# COMP90024     Group 66
+# Ziyang Zhang 	1139552
+# Yanjun Ma     1184516
+# Tianyi Zheng 	1024493
+# Yining Ding 	874213
+# Zixin Zhang 	1087336
+# Description   This document is used to save the income data from aurin to the database in CouchDB
+
 import ujson, re
 
 properties = []
