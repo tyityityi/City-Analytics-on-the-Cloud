@@ -1,3 +1,11 @@
+# COMP90024     Group 66
+# Yanjun Ma     1184516
+# Ziyang Zhang 	1139552
+# Tianyi Zheng 	1024493
+# Yining Ding 	874213
+# Zixin Zhang 	1087336
+# Description   This document remove duplicates from the new harvested tweets and append new unique tweets into unique_data in CouchDB
+
 import pandas as pd
 import couchdb
 
