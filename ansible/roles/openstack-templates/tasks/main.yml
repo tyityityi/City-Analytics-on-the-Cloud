@@ -1,0 +1,30 @@
+- name: output the IP to inventory file
+  vars:
+    ip0: '{{ instance0.openstack.public_v4 }}'
+    ip1: '{{ instance1.openstack.public_v4 }}'
+    ip2: '{{ instance2.openstack.public_v4 }}'
+    ip3: '{{ instance3.openstack.public_v4 }}'
+  template:
+    src: inventory.ini.j2
+    dest: ./inventory.ini
+
+
+- name: output the IP to the couchdb node bash script
+  vars:
+    ip0: '{{ instance0.openstack.public_v4 }}'
+    ip1: '{{ instance1.openstack.public_v4 }}'
+    ip2: '{{ instance2.openstack.public_v4 }}'
+  template:
+    src: "{{ item.name }}.sh.j2"
+    dest: ./roles/couchdb-{{ item.name }}/tasks/{{ item.name }}.sh
+  loop: '{{ nodes }}'
+
+
+# - name: output the IP to the web node bash script
+#   vars:
+#     ip3: '{{ instance3.openstack.public_v4 }}'
+#   template:
+#     src: "webnode.sh.j2"
+#     dest: ./roles/application-webnode/tasks/webnode.sh
+
+

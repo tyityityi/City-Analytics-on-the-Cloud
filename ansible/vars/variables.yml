@@ -1,0 +1,114 @@
+# common variables
+availability_zone: melbourne-qh2-uom
+
+# Volume
+volumes:
+  - vol_name: volume0
+   vol_size: 100
+  - vol_name: volume1
+   vol_size: 100
+  - vol_name: volume2
+   vol_size: 100
+  - vol_name: volume3
+    vol_size: 100
+
+# security group
+security_groups:
+  - name: instance_ssh
+    description: "security group for SSH access"
+    protocol: tcp
+    port_range_min: 22
+    port_range_max: 22
+    remote_ip_prefix: 0.0.0.0/0
+  - name: instance_http
+    description: "security group for HTTP access"
+    protocol: tcp
+    port_range_min: 80
+    port_range_max: 80
+    remote_ip_prefix: 0.0.0.0/0
+  - name: instance_https
+    description: "security group for HTTPS access"
+    protocol: tcp
+    port_range_min: 443
+    port_range_max: 443
+    remote_ip_prefix: 0.0.0.0/0
+  - name: instance_couchdb
+    description: "security group for couchdb cluster setup"
+    protocol: tcp
+    port_range_min: 5984
+    port_range_max: 5984
+    remote_ip_prefix: 0.0.0.0/0
+  - name: instance_couchdb0
+    description: "security group for couchdb cluster communication"
+    protocol: tcp
+    port_range_min: 5986
+    port_range_max: 5986
+    remote_ip_prefix: 0.0.0.0/0
+  - name: instance_couchdb1
+    description: "security group for couchdb cluster communication"
+    protocol: tcp
+    port_range_min: 4369
+    port_range_max: 4369
+    remote_ip_prefix: 0.0.0.0/0
+  - name: instance_couchdb2
+    description: "security group for couchdb cluster communication"
+    protocol: tcp
+    port_range_min: 9100
+    port_range_max: 9100
+    remote_ip_prefix: 0.0.0.0/0
+  # - name: instance_icmp
+  #   description: "security group for ICMP access"
+  #   protocol: icmp
+  #   port_range_min: 0
+  #   port_range_max: 65535
+  #   remote_ip_prefix: 0.0.0.0/0
+  
+    
+
+# security group for web server
+web_security_groups:
+  - name: instance_ssh
+    description: "security group for SSH access"
+    protocol: tcp
+    port_range_min: 22
+    port_range_max: 22
+    remote_ip_prefix: 0.0.0.0/0
+  - name: instance_http
+    description: "security group for HTTP access"
+    protocol: tcp
+    port_range_min: 80
+    port_range_max: 80
+    remote_ip_prefix: 0.0.0.0/0
+  - name: instance_https
+    description: "security group for HTTPS access"
+    protocol: tcp
+    port_range_min: 443
+    port_range_max: 443
+    remote_ip_prefix: 0.0.0.0/0
+
+# instance openstacksdk
+# instances:
+#   - name: instance0
+#     volume: 'volume0'
+#   - name: instance1
+#     volume: 'volume1'
+#   - name: instance2
+#     volume: 'volume2'
+
+# web_instances:
+#   - name: instance3
+#     volume: 'volume3'
+
+instance_image: 916cad7a-c545-48b2-b36c-d509ee63b3ce
+instance_key_name: sshkey
+instance_flavor: uom.mse.2c9g
+web_instance_flavor: uom.mse.1c4g
+
+nodes:
+  - name: masternode
+  - name: subnode1
+  - name: subnode2
+
+# couchdb username and password
+username: admin
+password: password
