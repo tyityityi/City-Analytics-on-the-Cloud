@@ -10,6 +10,7 @@ import couchdb
 import tweepy
 from tweepy import StreamListener, Stream
 from urllib3.exceptions import ProtocolError
+import sys
 
 consumer_key = 'vkZtp8hpIapvdzJA7RJYgpSpR'
 consumer_secret = 'VLJbzDxyXQQV2I85o72abZtiewSRHduzMS0PfoTOcTE4IR27D4'
