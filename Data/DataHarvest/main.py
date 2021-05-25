@@ -4,7 +4,7 @@
 # Tianyi Zheng 	1024493
 # Yining Ding 	874213
 # Zixin Zhang 	1087336
-# Description   This document demonstrates how to harvest tweets by using twitter API
+# Description   This document demonstrates how to harvest tweets by using twitter API and save the tweets into 'twitter' database in CouchDB
 
 import couchdb
 import tweepy
