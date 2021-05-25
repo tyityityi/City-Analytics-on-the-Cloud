@@ -1,3 +1,12 @@
+# COMP90024     Group 66
+# Yanjun Ma     1184516
+# Yining Ding 	874213
+# Zixin Zhang 	1087336
+# Ziyang Zhang 	1139552
+# Tianyi Zheng 	1024493
+# Description   This document extracts unique tweets which are related with Covid19 or Crime and save them into two different database 
+
+
 import couchdb
 import re
 from textblob import TextBlob
